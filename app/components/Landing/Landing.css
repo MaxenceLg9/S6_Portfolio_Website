@@ -1,0 +1,478 @@
+.landing {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landing--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+
+/* Container for the background effects */
+.landing--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+  overflow: hidden; /* Keep moving elements inside */
+}
+
+/* 1. Left Section: Added a subtle scan-line effect */
+.landing--container-left {
+  flex: 35%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  /*background: var(--item-primary);*/
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.landing--container-left .square,
+.landing--container-left .cross {
+  border-color: rgba(255, 255, 255, 0.3); /* White-ish for dark background */
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.landing--container-left::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 4px; /* Scan lines */
+  pointer-events: none;
+}
+
+/* 2. Right Section: The "Schematic Grid" */
+.landing--container-right {
+  flex: 65%;
+  height: 100%;
+  /*background-color: #eaeaea;*/
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  /* Technical Grid Background */
+  /*background-image: linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);*/
+  background-size: 40px 40px;
+  box-shadow: inset 50px 0 100px -50px rgba(0,0,0,0.1);
+}
+
+.pulse-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: #52a6f6;
+  border-radius: 50%;
+  margin-right: 12px;
+  vertical-align: middle;
+  box-shadow: 0 0 0 0 rgba(0, 178, 255, 0.7);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(118, 175, 255, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(0, 255, 0, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 255, 0, 0); }
+}
+
+/* 3. Moving Element: The "Radar Pulse" or Spotlight */
+.landing--container-right::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  /*background: radial-gradient(circle at center, rgba(var(--item-primary-rgb), 0.05) 0%, transparent 50%);*/
+  animation: moveSpotlight 15s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes moveSpotlight {
+  0% { transform: translate(-10%, -10%); }
+  50% { transform: translate(10%, 10%); }
+  100% { transform: translate(-10%, -10%); }
+}
+
+/* Relief for the Image */
+.landing--img {
+  --img-size: 400px;
+  position: absolute;
+  left: 35%;
+  transform: translateX(-50%);
+  width: var(--img-size);
+  height: var(--img-size);
+  object-fit: cover;
+  border-radius: 50%;
+  /* Glassmorphism relief border */
+  border: 10px solid rgba(255, 255, 255, 0.3);
+  box-shadow:
+          0px 20px 50px rgba(0, 0, 0, 0.3),
+          inset 0px 0px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+
+
+.landing--img:hover {
+  transform: translateX(-50%) scale(1.02);
+  box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.frames-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.frame {
+  width: 100%;
+  grid-area: 1 / 1 / 2 / 2; /* Stacks both divs in the same spot */
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1),
+  opacity 0.4s ease-in-out;
+}
+
+/* The Active Frame: Visible and in place */
+.frame-active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: all;
+  z-index: 2;
+}
+
+/* The Exiting Frame: Slides right and fades out */
+.frame-exit {
+  opacity: 0;
+  transform: translateX(30px); /* Slips away to the side */
+  pointer-events: none;
+  z-index: 1;
+}
+
+.lcl--content {
+  margin: 3rem;
+  width: 70%;
+  height: 90%;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+}
+
+.landing--social {
+  font-size: 150px;
+  margin: 0 1rem;
+  transition: transform 0.5s;
+}
+
+.landing--social:hover {
+  transform: scale(1.2);
+}
+
+.lcr--content {
+  width: 60%;
+  margin-right: 7rem;
+  font-family: var(--primaryFont);
+  font-style: normal;
+}
+
+.lcr--content h3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 800;
+  font-size: 1.50rem;
+  margin-bottom: -0.85rem;
+  opacity: 0.8;
+}
+
+.lcr--content h1 {
+  font-weight: 900;
+  font-size: 3.25rem;
+  line-height: 110%;
+  margin: 1rem 0;
+}
+
+.resumeBtn {
+  color: var(--item-primary);
+  background-color: transparent;
+  /* 1. Sharp corners feel more "Industrial/Serious" than 30px */
+  border-radius: 10px;
+  text-transform: uppercase;
+  width: 250px;
+  height: 50px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  /* 2. Use the Monospace font for "Technical" elements */
+  font-family: var(--terminalFont);
+  border: 2px solid var(--item-primary);
+  /* 3. "Smart" transition: slightly slower but smoother */
+  transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1px;
+}
+
+.resumeBtn:hover {
+  background-color: var(--item-tertiary);
+  color: var(--item-secondary);
+  border: 2px solid var(--item-primary);
+  box-shadow: 0 0 20px var(--item-primary30);
+  cursor: pointer;
+  /* 4. Letter spacing expansion implies "System Processing" */
+  letter-spacing: 2px;
+}
+
+.contactBtn {
+  background-color: var(--item-primary);
+  color: var(--item-secondary);
+  /* 1. Sharper corners for a "Technical" look */
+  border-radius: 10px;
+  text-transform: uppercase; /* Serious and authoritative */
+  width: 160px;
+  height: 50px;
+  font-family: var(--terminalFont); /* Use JetBrains Mono */
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  /* 2. Prevent Layout Shift: Define border here first */
+  border: 2px solid transparent;
+
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.toggle-container {
+  width: 100px;
+  height: 35px;
+  background-color: #000; /* Deep terminal black */
+  border: 1.5px solid var(--item-primary);
+  border-radius: 4px; /* Sharp technical edges */
+  position: relative; /* Essential for absolute children */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.toggle-pill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%; /* Half the container */
+  height: 100%;
+  background-color: var(--item-primary);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1; /* Sits behind the text */
+}
+
+/* Slide logic */
+.pill-fr { transform: translateX(0%); }
+.pill-en { transform: translateX(100%); }
+
+.toggle-labels {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  z-index: 2; /* Sits above the pill */
+  font-family: var(--terminalFont);
+  font-weight: 800;
+  pointer-events: none; /* Clicks pass through to container */
+  color: var(--item-primary); /* Default color when pill isn't under it */
+}
+
+/* When the pill is under the text, change the text color for contrast */
+.active-text {
+  color: var(--item-secondary);
+  transition: color 0.3s ease;
+}
+
+.contactBtn:hover {
+  background-color: transparent;
+  color: var(--item-primary);
+  /* 3. Border turns visible without moving the button */
+  border: 2px solid var(--item-primary);
+  box-shadow: 0 0 20px var(--item-primary30);
+  letter-spacing: 2px; /* Subtle "Dynamic" expansion */
+}
+
+.lcr--content p {
+  margin-top: 1.45rem;
+  font-weight: 500;
+  font-size: 1.15rem;
+  opacity: 0.7;
+}
+
+.lcr-buttonContainer {
+  margin-top: 2rem;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "var(--primaryFont)", sans-serif;
+}
+
+@media (max-width: 1100px) {
+  .landing--img {
+    --img-size: 350px;
+  }
+  .lcl--content {
+    margin: 2rem;
+  }
+
+  .lcr--content h6 {
+    font-size: 1.1rem;
+  }
+
+  .lcr--content h1 {
+    font-size: 3rem;
+  }
+
+  .lcr--content p {
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  .lcr-buttonContainer {
+    margin-top: 1rem;
+    flex-direction: column;
+    width: 200px;
+    height: 120px;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 900px) {
+  .landing--img {
+    --img-size: 300px;
+  }
+
+  .landing--social {
+    font-size: 30px;
+  }
+  .lcr--content {
+    width: 60%;
+    margin-top: 10%;
+    margin-right: 6%;
+  }
+
+  .lcr-buttonContainer {
+    margin-top: 1rem;
+    flex-direction: column;
+    width: 200px;
+    height: 120px;
+    align-items: flex-start;
+  }
+  .lcr-buttonContainer button:nth-child(2) {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .landing--container {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .landing--img {
+    --img-size: 200px;
+    left: 50%;
+    top: 30%;
+    border: 8px solid #eaeaea;
+    transform: translate(-50%, -50%);
+  }
+  .landing--container-left {
+    flex: initial;
+    width: 100%;
+    height: 30%;
+  }
+  .landing--social {
+    display: none;
+  }
+  .landing--container-right {
+    box-sizing: border-box;
+    padding: 0 2rem;
+    flex: initial;
+    height: 70%;
+    width: 100%;
+    background-color: #eaeaea;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+  }
+  .lcr--content {
+    margin-top: 20%;
+    margin-right: initial;
+    width: 100%;
+  }
+  .lcr--content h6 {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .lcr--content h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  .lcr--content p {
+    font-size: 0.95rem;
+    text-align: center;
+    margin: 0 auto;
+    width: 90%;
+  }
+  .lcr-buttonContainer {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lcr-buttonContainer button {
+    margin-top: -20%;
+  }
+}
+
+@media (max-width: 500px) {
+  .lcr--content {
+    margin-top: 35%;
+  }
+}
+@media (max-width: 370px) {
+  .lcr--content {
+    margin-top: 60%;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
+  .landing {
+    height: 100%;
+  }
+
+  .landing--img {
+    --img-size: 150px;
+    left: 50%;
+    top: 20%;
+  }
+}
