@@ -64,7 +64,7 @@ function Contacts() {
     };
 
     return (
-        <div className='contacts-details'>
+        <div className='contacts-details' id='contacts'>
             <div className='contacts-info-container'>
                 <h2 style={{ color: theme.primary }}>Get in Touch</h2>
 
