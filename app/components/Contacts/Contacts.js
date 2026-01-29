@@ -64,7 +64,7 @@ function Contacts() {
     };
 
     return (
-        <div className='contacts' id='contacts' style={{ backgroundColor: theme.secondary }}>
+        <div className='contacts' id='contacts'>
             <div className='contacts--container'>
                 <h1 style={{ color: theme.primary }}>Contact</h1>
                 <div className='contacts-body'>

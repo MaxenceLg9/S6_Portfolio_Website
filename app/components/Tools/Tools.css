@@ -37,7 +37,7 @@
 
 
 .skill--box {
-    background: var(--item-secondary100);
+    background: var(--item-tertiary50);
     border-radius: 10px;
     width: 160px;
     height: 160px;
@@ -48,7 +48,7 @@
     justify-content: center;
     padding: 2rem 1rem;
     transition: 300ms ease-in-out;
-    box-shadow: 0 0 20px var(--item-primary50);
+    box-shadow: 0 0 20px var(--item-tertiary50);
 }
 
 .skill--box:hover  {

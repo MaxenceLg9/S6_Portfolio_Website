@@ -8,6 +8,7 @@ export const Variables = {
     '--item-tertiary': themeData.theme.tertiary,
     '--item-tertiary80': themeData.theme.tertiary80,
     '--item-tertiary70': themeData.theme.tertiary70,
+    '--item-tertiary50': themeData.theme.tertiary50,
     '--item-bg': themeData.theme.secondary,
     '--item-color': themeData.theme.tertiary,
     '--item-primary30': themeData.theme.primary30,

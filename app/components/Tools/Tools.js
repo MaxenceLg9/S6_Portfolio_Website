@@ -9,7 +9,7 @@ function Tools() {
     const { theme } = useContext(ThemeContext);
 
     return (
-        <div className="skills" style={{backgroundColor: theme.secondary}}>
+        <div className="skills">
             <div className="skillsHeader">
                 <h1 style={{color: theme.primary}}>Outils</h1>
             </div>

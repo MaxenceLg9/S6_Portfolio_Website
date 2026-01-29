@@ -54,17 +54,17 @@ function hexToRgb(hex) {
  * Main Particles Component
  */
 export const Background = ({
-                              className,
-                              children,
-                              quantity = 100,
-                              staticity = 50,
-                              ease = 50,
-                              size = 2,
-                              refresh = false,
-                              color = "#ffffff",
-                              vx = 0,
-                              vy = 0,
-                          }) => {
+                               className,
+                               children,
+                               quantity = 200,
+                               staticity = 50,
+                               ease = 100,
+                               size = 2,
+                               refresh = false,
+                               color = "#ffffff",
+                               vx = 0,
+                               vy = 0,
+                           }) => {
     const canvasRef = useRef(null)
     const canvasContainerRef = useRef(null)
     const context = useRef(null)

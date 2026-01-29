@@ -7,7 +7,7 @@ function Skills() {
     const { theme } = useContext(ThemeContext);
 
     return (
-        <div className="skills" id="skills" style={{backgroundColor: theme.secondary}}>
+        <div className="skills" id="skills">
             <div className="skillsHeader">
                 <h1 style={{color: theme.primary}}>Compétences du Plan d'Études</h1>
             </div>

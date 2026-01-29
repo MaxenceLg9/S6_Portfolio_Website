@@ -24,7 +24,7 @@ function Landing() {
     const [isEnglish, setIsEnglish] = useState(true);
 
     return (
-        <div className='landing'>
+        <div className='landing' id="home">
             <div className='landing--container'>
                 <div className='landing--container-left'>
                     <div className='lcl--content'>

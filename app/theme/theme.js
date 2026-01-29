@@ -217,13 +217,13 @@ export const orangeThemeDark = {
     tertiary: '#ffffff',
     tertiary80: 'rgba(213,218,230,0.99)',
     tertiary70: 'rgba(167,176,198,0.7)',
-    tertiary50: '#eaeaea80',
+    tertiary50: '#535353',
     aboutimg1: orangeThemeboy,
     aboutimg2: orangeThemegirl,
     eduimg: eduOrange,
     expimg: expOrange,
     contactsimg: contactsOrange,
-    quartiary: '#ffffff30',
+    quartiary: '#323232',
     quartiary10: '#0d1117',
 }
 
