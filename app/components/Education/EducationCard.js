@@ -12,15 +12,9 @@ function EducationCard({ id, institution, course, startYear, endYear, finished, 
 
     const { theme } = useContext(ThemeContext);
 
-    const useStyles = makeStyles((t) => ({
-
-    }));
-
-    const classes = useStyles();
-
     return (
         /* 2. Removed <Fade bottom> wrapper */
-        <div key={id} className={`education-card ${classes.educationCard}`} >
+        <div key={id} className={`education-card`} >
             <div className="educard-img" style={{backgroundColor: theme.primary}}>
                 <Image
                     src={theme.type === 'light' ? eduImgBlack : eduImgWhite}
