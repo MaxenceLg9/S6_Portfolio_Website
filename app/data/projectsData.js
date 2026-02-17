@@ -17,17 +17,17 @@ export const groupProjectsData = [
         code: 'https://gitlab.info.iut-tlse3.fr/mrk4759a/configurations-s5b01',
         demo: 'https://gitlab.info.iut-tlse3.fr/mrk4759a/configurations-s5b01',
         image: "/img/nailloux.png",
-        skills: ['Réaliser', 'Administrer', 'Collaborer', 'Gérer', 'Optimiser', 'Conduire']
+        skills: ['Ingénierie', 'Administration de données', 'Management', 'Gouvernance SI', 'Innover', 'Conduire']
     },
     {
         id: 2,
         projectName: 'RugbyGestionApp',
-        projectDesc: 'Application de gestion d\'équipe de rugby permettant de gérer les joueurs, les matchs et les statistiques.',
+        projectDesc: 'Application de gestion d\'équipe de rugby permettant de Gouvernance SI les joueurs, les matchs et les statistiques.',
         tags: ['PHP', 'MySQL', 'JwT', 'RestAPI'],
         code: 'https://github.com/MaxenceLg9/R401_RugbyGestion2',
         demo: 'https://github.com/MaxenceLg9/R401_RugbyGestion2',
         image: "/img/rugbygestionapp.png",
-        skills: ['Réaliser', 'Collaborer', 'Gérer', 'Optimiser']
+        skills: ['Ingénierie', 'Management', 'Gouvernance SI', 'Innover']
     },
     {
         id: 3,
@@ -37,7 +37,7 @@ export const groupProjectsData = [
         code: 'https://github.com/MaxenceLg9/R5B10-Compress_Projet_Rust',
         demo: 'https://github.com/MaxenceLg9/R5B10-Compress_Projet_Rust',
         image: "/img/44.png",
-        skills: ['Réaliser', 'Collaborer', 'Optimiser']
+        skills: ['Ingénierie', 'Management', 'Innover']
     },
 ]
 

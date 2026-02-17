@@ -5,39 +5,34 @@ import {BsKanban} from "react-icons/bs";
 
 export const skillsData = [
     {
-        name: "Réaliser",
-        description: "Permettre la polyvalence multi-plateformes des solutions informatiques, assurant ainsi une interopérabilité",
+        name: "Ingénierie",
+        description: "Concevoir des solutions hétérogènes et assurer la cohérence technique des écosystèmes informatiques.",
         subSkills: ["Pentesting", "ISO 27001", "Cryptography", "Firewalling"],
         icon: <FaTerminal/>
     },
     {
-        name: "Administrer",
-        description: "Monitorer, améliorer une solution informatique en assurant sa disponibilité, sa performance et sa sécurité",
-        subSkills: ["Cisco CCNA", "VLAN", "VPN", "Routing/Switching"],
+        name: "Gouvernance SI",
+        description: "Superviser et pérenniser les infrastructures en veillant à leur haute disponibilité et à leur résilience.",
         icon: <FaUserShield/>
     },
     {
-        name: "Collaborer",
-        description: "Travailler et s'organiser sous forme d'une équipe en repartissant les tâches et responsabilités.",
-        subSkills: ["Cisco CCNA", "VLAN", "VPN", "Routing/Switching"],
+        name: "Management",
+        description: "Coordonner les synergies d'équipe et structurer l'organisation du travail pour atteindre les objectifs communs.",
         icon: <HiUsers/>
     },
     {
-        name: "Gérer",
-        description: "Assurer la performance, l'intégrité et la sécurité des flux de données, de la base de données à l'application finale ",
-        subSkills: ["Cisco CCNA", "VLAN", "VPN", "Routing/Switching"],
+        name: "Administration de données",
+        description: "Maîtriser le cycle de vie de la donnée et sécuriser les échanges entre les différentes couches applicatives.",
         icon: <SlSpeedometer/>
     },
     {
-        name: "Conduire",
-        description: "Mener à bien un projet en tenant des besoins des parties prenantes, et des spécificités liées à l'environnement technique.",
-        subSkills: ["Cisco CCNA", "VLAN", "VPN", "Routing/Switching"],
+        name: "Gestion de Projet",
+        description: "Diriger le déploiement de solutions SI en respectant les exigences fonctionnelles et les spécificités environnementales.",
         icon: <BsKanban/>
     },
     {
-        name: "Optimiser",
-        description: "Mettre en place les structures informatiques, logiques ou techniques, nécessaires à l'amélioration des processus ou pour résoudre un problème",
-        subSkills: ["Cisco CCNA", "VLAN", "VPN", "Routing/Switching"],
+        name: "Innovation",
+        description: "Rationaliser les structures existantes pour résoudre des problématiques critiques et accroître l'efficience opérationnelle.",
         icon: <HiOutlineLightBulb/>
     }
 ];
